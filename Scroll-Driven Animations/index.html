@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scroll-Driven Animations</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- SCROLL PROGRESS INDICATOR (Section 1) -->
+  <div class="scroll-progress">
+    <div class="scroll-progress-bar"></div>
+  </div>
+
+  <!-- Floating particles background -->
+  <div class="particles">
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+  </div>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="hero-content">
+      <span class="hero-badge">CSS Scroll-Driven Animations</span>
+      <h1>Scroll Magic</h1>
+      <p>Experience the future of web animation. Pure CSS scroll-driven animations that respond to user scroll position — no JavaScript required.</p>
+      <div class="scroll-indicator">
+        <span>Scroll to explore</span>
+        <div class="scroll-arrow"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 2: FADE/SLIDE REVEAL ANIMATIONS -->
+  <section class="reveal-section">
+    <div class="section-header">
+      <span class="section-label">01 — Reveal</span>
+      <h2 class="section-title">Elements That Appear</h2>
+      <p class="section-subtitle">Watch as cards elegantly slide and fade into view as you scroll down the page.</p>
+    </div>
+
+    <div class="cards-container">
+      <div class="card" style="--i: 0;">
+        <div class="card-icon">✨</div>
+        <h3>Seamless Transitions</h3>
+        <p>Elements smoothly transition from invisible to visible, creating a polished, professional feel that guides users through your content.</p>
+      </div>
+
+      <div class="card" style="--i: 1;">
+        <div class="card-icon">🎯</div>
+        <h3>Precision Timing</h3>
+        <p>Using animation-range, we control exactly when animations start and end, ensuring perfect synchronization with scroll position.</p>
+      </div>
+
+      <div class="card" style="--i: 2;">
+        <div class="card-icon">🚀</div>
+        <h3>Performance First</h3>
+        <p>CSS-driven animations run on the compositor thread, delivering buttery-smooth 60fps performance without JavaScript overhead.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4: TRANSFORM EFFECTS -->
+  <section class="transform-section">
+    <div class="transform-container">
+      <div class="transform-visual">
+        <div class="transform-ring"></div>
+        <div class="transform-ring"></div>
+        <div class="parallax-layer rotating-glyphs">
+          <span class="glyph">✦</span>
+          <span class="glyph">◈</span>
+          <span class="glyph">✦</span>
+          <span class="glyph">◈</span>
+          <span class="glyph">✦</span>
+        </div>
+        <div class="transform-circle">SCROLL</div>
+      </div>
+
+      <div class="transform-content">
+        <span class="transform-label slide-in-left " style="--i:0">02 — Transform</span>
+        <h2 class="transform-title slide-in-left " style="--i:1">Rotate, Scale & <span>Evolve</span></h2>
+        <p class="transform-description slide-in-left " style="--i:2">As you scroll, elements undergo stunning transformations — rotation, scaling, and opacity changes create dynamic visual feedback.</p>
+        <ul class="transform-features">
+          <li class="slide-in-left" style="--i:5">360° rotation synced to scroll position</li>
+          <li class="slide-in-left" style="--i:6">Dynamic scale transformations</li>
+          <li class="slide-in-left" style="--i:7">Layered ring effects with depth</li>
+          <li class="slide-in-left" style="--i:8">Opacity transitions for depth perception</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 5: STORYTELLING ANIMATION -->
+  <section class="story-section">
+    <div class="section-header">
+      <span class="section-label">03 — Story</span>
+      <h2 class="section-title">Step By Step</h2>
+      <p class="section-subtitle">A vertical timeline reveals content progressively as you scroll, guiding users through a narrative journey.</p>
+    </div>
+
+    <div class="story-container">
+      <div class="story-timeline"></div>
+
+      <div class="story-step">
+        <div class="story-number">1</div>
+        <div class="story-step-content">
+          <div class="story-icon">🎨</div>
+          <h3 class="story-title">Design Phase</h3>
+          <p class="story-text">Every great project begins with a vision. We sketch, prototype, and refine our ideas until they shine.</p>
+        </div>
+      </div>
+
+      <div class="story-step">
+        <div class="story-number">2</div>
+        <div class="story-step-content">
+          <div class="story-icon">⚡</div>
+          <h3 class="story-title">Development</h3>
+          <p class="story-text">Our team brings the design to life with clean code, modern frameworks, and best practices.</p>
+        </div>
+      </div>
+
+      <div class="story-step">
+        <div class="story-number">3</div>
+        <div class="story-step-content">
+          <div class="story-icon">🔍</div>
+          <h3 class="story-title">Testing & QA</h3>
+          <p class="story-text">Rigorous testing ensures everything works perfectly across all devices and browsers.</p>
+        </div>
+      </div>
+
+      <div class="story-step">
+        <div class="story-number">4</div>
+        <div class="story-step-content">
+          <div class="story-icon">🚀</div>
+          <h3 class="story-title">Launch & Grow</h3>
+          <p class="story-text">Your project goes live! We monitor, optimize, and help you scale to new heights.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA SECTION -->
+  <section class="cta-section">
+    <div class="cta-content">
+      <h2 class="cta-title">Ready to Create?</h2>
+      <p class="cta-subtitle">Start building with CSS Scroll-Driven Animations today.</p>
+      <h3 style="margin-bottom: 1rem;">From Idea to App</h3>
+      <a href="https://t.me/from_idea_to_app" class="cta-button">Get Started</a>
+    </div>
+  </section>
+
+</body>
+</html>
