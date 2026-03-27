@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Container Queries Showcase</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="page-header">
+        <div class="header-content">
+            <h1>Container Queries</h1>
+            <p>A collection of modern CSS components that respond to their container, not the viewport</p>
+        </div>
+    </header>
+
+    <main class="showcase">
+        <!-- Example 1: Adaptive Card -->
+        <section class="example-section">
+            <h2 class="example-title">
+                <span class="example-number">01</span>
+                Adaptive Card
+            </h2>
+            <p class="example-description">Card switches from vertical to horizontal layout based on container width using <code>container-type: inline-size</code></p>
+
+            <div class="demo-container">
+                <div class="card-container">
+                    <article class="adaptive-card">
+                        <div class="card-image">
+                            <div class="image-placeholder">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <rect x="3" y="3" width="18" height="18" rx="2"/>
+                                    <circle cx="8.5" cy="8.5" r="1.5"/>
+                                    <path d="M21 15l-5-5L5 21"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <span class="card-tag">Design System</span>
+                            <h3 class="card-title">Fluid Typography</h3>
+                            <p class="card-text">Text that adapts beautifully to any container width, maintaining perfect readability across all breakpoints.</p>
+                            <div class="card-footer">
+                                <span class="card-date">Mar 24, 2026</span>
+                                <button class="card-button">Learn More</button>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                <div class="card-container" style="width: 320px;">
+                    <article class="adaptive-card">
+                        <div class="card-image">
+                            <div class="image-placeholder">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <rect x="3" y="3" width="18" height="18" rx="2"/>
+                                    <circle cx="8.5" cy="8.5" r="1.5"/>
+                                    <path d="M21 15l-5-5L5 21"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <span class="card-tag">Design System</span>
+                            <h3 class="card-title">Fluid Typography</h3>
+                            <p class="card-text">Text that adapts beautifully to any container width, maintaining perfect readability across all breakpoints.</p>
+                            <div class="card-footer">
+                                <span class="card-date">Mar 24, 2026</span>
+                                <button class="card-button">Learn More</button>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Example 2: Smart Navigation -->
+        <section class="example-section">
+            <h2 class="example-title">
+                <span class="example-number">02</span>
+                Smart Navigation
+            </h2>
+            <p class="example-description">Navigation that intelligently collapses items and shows "More" when space is limited</p>
+
+            <div class="demo-container nav-demo">
+                <nav class="smart-nav">
+                    <a href="#" class="nav-logo">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                            <path d="M2 17l10 5 10-5"/>
+                            <path d="M2 12l10 5 10-5"/>
+                        </svg>
+                        <span>Brand</span>
+                    </a>
+                    <div class="nav-items">
+                        <a href="#" class="nav-item active">Dashboard</a>
+                        <a href="#" class="nav-item">Analytics</a>
+                        <a href="#" class="nav-item">Projects</a>
+                        <a href="#" class="nav-item">Tasks</a>
+                        <a href="#" class="nav-item">Team</a>
+                        <a href="#" class="nav-item">Settings</a>
+                    </div>
+                    <div class="nav-actions">
+                        <button class="nav-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="11" cy="11" r="8"/>
+                                <path d="M21 21l-4.35-4.35"/>
+                            </svg>
+                        </button>
+                        <button class="nav-avatar">JD</button>
+                    </div>
+                </nav>
+                <nav class="smart-nav">
+                    <a href="#" class="nav-logo">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                            <path d="M2 17l10 5 10-5"/>
+                            <path d="M2 12l10 5 10-5"/>
+                        </svg>
+                        <span>Brand</span>
+                    </a>
+                    <div class="nav-items">
+                        <a href="#" class="nav-item active">Dashboard</a>
+                        <a href="#" class="nav-item">Analytics</a>
+                        <a href="#" class="nav-item">Projects</a>
+                        <a href="#" class="nav-item">Tasks</a>
+                        <a href="#" class="nav-item">Team</a>
+                        <a href="#" class="nav-item">Settings</a>
+                    </div>
+                    <div class="nav-actions">
+                        <button class="nav-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="11" cy="11" r="8"/>
+                                <path d="M21 21l-4.35-4.35"/>
+                            </svg>
+                        </button>
+                        <button class="nav-avatar">JD</button>
+                    </div>
+                </nav>
+            </div>
+        </section>
+
+        <!-- Example 3: Dashboard Widget -->
+        <section class="example-section">
+            <h2 class="example-title">
+                <span class="example-number">03</span>
+                Dashboard Widget
+            </h2>
+            <p class="example-description">Widget rearranges its internal layout from side-by-side stats to stacked grid based on container</p>
+
+            <div class="demo-container widget-demo">
+                <div class="widget-container">
+                    <div class="dashboard-widget">
+                        <header class="widget-header">
+                            <div class="widget-title-area">
+                                <h3 class="widget-title">Performance Overview</h3>
+                                <span class="widget-subtitle">Last 30 days</span>
+                            </div>
+                            <button class="widget-menu">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <circle cx="12" cy="5" r="1.5"/>
+                                    <circle cx="12" cy="12" r="1.5"/>
+                                    <circle cx="12" cy="19" r="1.5"/>
+                                </svg>
+                            </button>
+                        </header>
+                        <div class="widget-stats">
+                            <div class="stat-card">
+                                <div class="stat-icon blue">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+                                    </svg>
+                                </div>
+                                <div class="stat-info">
+                                    <span class="stat-value">+24.8%</span>
+                                    <span class="stat-label">Conversion</span>
+                                </div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-icon green">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/>
+                                    </svg>
+                                </div>
+                                <div class="stat-info">
+                                    <span class="stat-value">$84,230</span>
+                                    <span class="stat-label">Revenue</span>
+                                </div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-icon purple">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/>
+                                        <circle cx="9" cy="7" r="4"/>
+                                        <path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/>
+                                    </svg>
+                                </div>
+                                <div class="stat-info">
+                                    <span class="stat-value">1,248</span>
+                                    <span class="stat-label">New Users</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="widget-chart">
+                            <div class="chart-bars">
+                                <div class="bar" style="--height: 40%"></div>
+                                <div class="bar" style="--height: 65%"></div>
+                                <div class="bar" style="--height: 45%"></div>
+                                <div class="bar" style="--height: 80%"></div>
+                                <div class="bar" style="--height: 55%"></div>
+                                <div class="bar" style="--height: 90%"></div>
+                                <div class="bar" style="--height: 70%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="widget-container">
+                    <div class="dashboard-widget">
+                        <header class="widget-header">
+                            <div class="widget-title-area">
+                                <h3 class="widget-title">Performance Overview</h3>
+                                <span class="widget-subtitle">Last 30 days</span>
+                            </div>
+                            <button class="widget-menu">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <circle cx="12" cy="5" r="1.5"/>
+                                    <circle cx="12" cy="12" r="1.5"/>
+                                    <circle cx="12" cy="19" r="1.5"/>
+                                </svg>
+                            </button>
+                        </header>
+                        <div class="widget-stats">
+                            <div class="stat-card">
+                                <div class="stat-icon blue">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+                                    </svg>
+                                </div>
+                                <div class="stat-info">
+                                    <span class="stat-value">+24.8%</span>
+                                    <span class="stat-label">Conversion</span>
+                                </div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-icon green">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/>
+                                    </svg>
+                                </div>
+                                <div class="stat-info">
+                                    <span class="stat-value">$84,230</span>
+                                    <span class="stat-label">Revenue</span>
+                                </div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-icon purple">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/>
+                                        <circle cx="9" cy="7" r="4"/>
+                                        <path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/>
+                                    </svg>
+                                </div>
+                                <div class="stat-info">
+                                    <span class="stat-value">1,248</span>
+                                    <span class="stat-label">New Users</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="widget-chart">
+                            <div class="chart-bars">
+                                <div class="bar" style="--height: 40%"></div>
+                                <div class="bar" style="--height: 65%"></div>
+                                <div class="bar" style="--height: 45%"></div>
+                                <div class="bar" style="--height: 80%"></div>
+                                <div class="bar" style="--height: 55%"></div>
+                                <div class="bar" style="--height: 90%"></div>
+                                <div class="bar" style="--height: 70%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Example 4: Dynamic Grid Gallery -->
+        <section class="example-section">
+            <h2 class="example-title">
+                <span class="example-number">04</span>
+                Dynamic Grid Gallery
+            </h2>
+            <p class="example-description">Gallery that internally changes its column count based on container width using <code>cqmin</code> units</p>
+
+            <div class="demo-container grid-demo">
+                <div class="gallery-container">
+                    <div class="gallery-grid">
+                        <div class="gallery-item">
+                            <div class="gallery-image">
+                                <span class="gallery-icon">🎨</span>
+                            </div>
+                            <div class="gallery-info">
+                                <h4>Color Theory</h4>
+                                <p>Understanding color palettes</p>
+                            </div>
+                        </div>
+                        <div class="gallery-item">
+                            <div class="gallery-image">
+                                <span class="gallery-icon">📐</span>
+                            </div>
+                            <div class="gallery-info">
+                                <h4>Layout Design</h4>
+                                <p>Creating balanced compositions</p>
+                            </div>
+                        </div>
+                        <div class="gallery-item">
+                            <div class="gallery-image">
+                                <span class="gallery-icon">✏️</span>
+                            </div>
+                            <div class="gallery-info">
+                                <h4>Typography</h4>
+                                <p>Choosing the right fonts</p>
+                            </div>
+                        </div>
+                        <div class="gallery-item">
+                            <div class="gallery-image">
+                                <span class="gallery-icon">🎯</span>
+                            </div>
+                            <div class="gallery-info">
+                                <h4>User Focus</h4>
+                                <p>Designing for users</p>
+                            </div>
+                        </div>
+                        <div class="gallery-item">
+                            <div class="gallery-image">
+                                <span class="gallery-icon">⚡</span>
+                            </div>
+                            <div class="gallery-info">
+                                <h4>Performance</h4>
+                                <p>Optimizing load times</p>
+                            </div>
+                        </div>
+                        <div class="gallery-item">
+                            <div class="gallery-image">
+                                <span class="gallery-icon">🌙</span>
+                            </div>
+                            <div class="gallery-info">
+                                <h4>Dark Mode</h4>
+                                <p>Modern theming techniques</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-container">
+                    <div class="gallery-grid">
+                        <div class="gallery-item">
+                            <div class="gallery-image">
+                                <span class="gallery-icon">🎨</span>
+                            </div>
+                            <div class="gallery-info">
+                                <h4>Color Theory</h4>
+                                <p>Understanding color palettes</p>
+                            </div>
+                        </div>
+                        <div class="gallery-item">
+                            <div class="gallery-image">
+                                <span class="gallery-icon">📐</span>
+                            </div>
+                            <div class="gallery-info">
+                                <h4>Layout Design</h4>
+                                <p>Creating balanced compositions</p>
+                            </div>
+                        </div>
+                        <div class="gallery-item">
+                            <div class="gallery-image">
+                                <span class="gallery-icon">✏️</span>
+                            </div>
+                            <div class="gallery-info">
+                                <h4>Typography</h4>
+                                <p>Choosing the right fonts</p>
+                            </div>
+                        </div>
+                        <div class="gallery-item">
+                            <div class="gallery-image">
+                                <span class="gallery-icon">🎯</span>
+                            </div>
+                            <div class="gallery-info">
+                                <h4>User Focus</h4>
+                                <p>Designing for users</p>
+                            </div>
+                        </div>
+                        <div class="gallery-item">
+                            <div class="gallery-image">
+                                <span class="gallery-icon">⚡</span>
+                            </div>
+                            <div class="gallery-info">
+                                <h4>Performance</h4>
+                                <p>Optimizing load times</p>
+                            </div>
+                        </div>
+                        <div class="gallery-item">
+                            <div class="gallery-image">
+                                <span class="gallery-icon">🌙</span>
+                            </div>
+                            <div class="gallery-info">
+                                <h4>Dark Mode</h4>
+                                <p>Modern theming techniques</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Example 5: Responsive Typography -->
+        <section class="example-section">
+            <h2 class="example-title">
+                <span class="example-number">05</span>
+                Responsive Typography
+            </h2>
+            <p class="example-description">Headline that scales using container query units (<code>cqw</code>) for fluid sizing based on parent width</p>
+
+            <div class="demo-container type-demo">
+                <div class="typography-container">
+                    <div class="typography-content">
+                        <span class="type-label">Feature Highlight</span>
+                        <h2 class="type-heading">Container Queries change everything we know about responsive design</h2>
+                        <p class="type-body">Components that adapt to their container instead of the viewport unlock entirely new possibilities for modular, reusable UI architecture.</p>
+                        <div class="type-actions">
+                            <button class="type-btn primary">Get Started</button>
+                            <button class="type-btn secondary">Documentation</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="typography-container" style="width: 320px;">
+                    <div class="typography-content">
+                        <span class="type-label">Feature Highlight</span>
+                        <h2 class="type-heading">Container Queries change everything we know about responsive design</h2>
+                        <p class="type-body">Components that adapt to their container instead of the viewport unlock entirely new possibilities for modular, reusable UI architecture.</p>
+                        <div class="type-actions">
+                            <button class="type-btn primary">Get Started</button>
+                            <button class="type-btn secondary">Documentation</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+    </main>
+
+    <footer class="page-footer">
+        <p>Built with pure CSS Container Queries • No JavaScript Required</p>
+    </footer>
+</body>
+</html>
