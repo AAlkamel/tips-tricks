@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>عينان تلاحقان الماوس باستخدام atan2</title>
+    <style>
+        :root {
+            /* قيم افتراضية لإحداثيات الماوس */
+            --mouse-x: 0px;
+            --mouse-y: 0px;
+        }
+
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #1a1a1a; /* خلفية داكنة */
+            overflow: hidden;
+            gap: 20px; /* مسافة بين العينين */
+        }
+
+        /* تنسيق "بياض العين" */
+        .eye {
+            position: relative;
+            width: 40px;
+            height: 40px;
+            background-color: white;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            overflow: hidden; /* لضمان عدم خروج الحدقة */
+        }
+
+        /* تنسيق "الحدقة" (الجزء الأسود) */
+        .pupil {
+            position: absolute;
+            width:20px;
+            height: 20px;
+            background-color: #333;
+            border-radius: 50%;
+            
+            /* --- التنسيق الأساسي الذي طلبته --- */
+            
+            /* 1. حساب زاوية الميلان نحو الماوس */
+            /* نحصل على إحداثيات مركز العين الحالية في الـ JS */
+            --angle: atan2(var(--mouse-y) - var(--eye-y), var(--mouse-x) - var(--eye-x));
+            
+            /* 2. تحريك الحدقة بناءً على الزاوية */
+            /* المسافة التي تتحركها الحدقة داخل العين (مثلاً 25px) */
+            --distance: 8px; 
+            
+            /* نستخدم cos لـ X و sin لـ Y لتحديد موضع الحدقة على دائرة وهمية داخل العين */
+            transform: translate(
+                calc(cos(var(--angle)) * var(--distance)),
+                calc(sin(var(--angle)) * var(--distance))
+            );
+
+            /* إضافة لمعة صغيرة داخل الحدقة لمظهر واقعي */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* اللمعة البيضاء داخل الحدقة */
+        .pupil::after {
+            content: '';
+            position: absolute;
+            top: 3px;
+            left: 3px;
+            width: 4px;
+            height: 4px;
+            background-color: rgba(255, 255, 255, 0.543);
+            border-radius: 50%;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="eye">
+        <div class="pupil" id="pupil1"></div>
+    </div>
+
+    <div class="eye">
+        <div class="pupil" id="pupil2"></div>
+    </div>
+
+    <script>
+        // نحتاج لـ JS فقط لتمرير إحداثيات الماوس ومواقع العيون
+        const pupil1 = document.getElementById('pupil1');
+        const pupil2 = document.getElementById('pupil2');
+
+        window.addEventListener('mousemove', (e) => {
+            // 1. تمرير إحداثيات الماوس لـ CSS
+            document.documentElement.style.setProperty('--mouse-x', e.clientX + 'px');
+            document.documentElement.style.setProperty('--mouse-y', e.clientY + 'px');
+
+            // 2. تمرير موقع مركز كل عين لـ CSS
+            updateEyePosition(pupil1);
+            updateEyePosition(pupil2);
+        });
+
+        // وظيفة لحساب مركز العنصر وتمريره كمتغير CSS
+        function updateEyePosition(element) {
+            const rect = element.getBoundingClientRect();
+            const centerX = rect.left + rect.width / 2;
+            const centerY = rect.top + rect.height / 2;
+            element.style.setProperty('--eye-x', centerX + 'px');
+            element.style.setProperty('--eye-y', centerY + 'px');
+        }
+
+        // تحديث أولي عند التحميل
+        updateEyePosition(pupil1);
+        updateEyePosition(pupil2);
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>مؤشر يطارد الماوس باستخدام atan2</title>
+    <style>
+        :root {
+            /* قيم افتراضية للإحداثيات */
+            --mouse-x: 0px;
+            --mouse-y: 0px;
+        }
+
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #1e2941;
+            overflow: hidden;
+        }
+
+        /* حاوية السهم لتحديد مكانه الثابت */
+        .arrow-container {
+            position: relative;
+            width: 100px;
+            height: 100px;
+        }
+
+        .arrow {
+            /* 1. تحديد مركز السهم (نقطة الأصل للقياس) */
+            /* نفترض أن السهم في منتصف الشاشة تقريبًا */
+            --arrow-x: 50vw;
+            --arrow-y: 50vh;
+
+            /* 2. استخدام atan2 لحساب الزاوية بين الماوس والسهم */
+            /* atan2(y2 - y1, x2 - x1) */
+            --angle: atan2(var(--mouse-y) - var(--arrow-y), var(--mouse-x) - var(--arrow-x));
+
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 60px;
+            height: 60px;
+            
+            /* 3. تطبيق الدوران المحسوب */
+            transform: translate(-50%, -50%) rotate(var(--angle));
+            
+            /* تنسيق شكل السهم */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.1s ease-out; /* نعومة في الحركة */
+        }
+
+        /* رسم شكل السهم باستخدام CSS */
+        .arrow::before {
+            content: '';
+            width: 0; 
+            height: 0; 
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+            border-left: 40px solid #38bdf8; /* رأس السهم يشير لليمين افتراضيًا */
+            filter: drop-shadow(0 0 10px #38bdf8);
+        }
+
+        .target-dot {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            background: #f43f5e;
+            border-radius: 50%;
+            pointer-events: none;
+            transform: translate(-50%, -50%);
+            left: var(--mouse-x);
+            top: var(--mouse-y);
+            box-shadow: 0 0 15px #f43f5e;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="arrow-container">
+        <div class="arrow"></div>
+    </div>
+
+    <div class="target-dot"></div>
+
+    <script>
+        // وظيفة جافا سكريبت الوحيدة هي إرسال الإحداثيات لـ CSS
+        window.addEventListener('mousemove', (e) => {
+            document.documentElement.style.setProperty('--mouse-x', e.clientX + 'px');
+            document.documentElement.style.setProperty('--mouse-y', e.clientY + 'px');
+        });
+    </script>
+
+</body>
+</html>
