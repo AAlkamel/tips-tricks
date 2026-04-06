@@ -1,0 +1,100 @@
+/* =========================================
+   FUN.CSS - CSS Custom Functions
+   ========================================= */
+   :root{
+    --base: 16px;
+   }
+
+   @function --transparent(--color, --alpha) {
+  result: oklch(from var(--color) l c h / var(--alpha));
+}
+
+@function --px-to-rem(--px) {
+  --base: 16;
+  result: calc(var(--px) / var(--base) * 1rem);
+}
+
+.container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card {
+  width:300px;
+  height: 200px;
+  background-color:--transparent(#3498db, 0.8) ;
+  border-radius: --px-to-rem(16);
+
+}
+/*
+
+@function --px-to-vw(--px) {
+  --viewport-width: 1920;
+  --return: calc(var(--px) / var(--viewport-width) * 100vw);
+}
+
+
+@function --px-to-vh(--px) {
+  --viewport-height: 1080;
+  --return: calc(var(--px) / var(--viewport-height) * 100vh);
+}
+
+
+@function --rem-to-px(--rem) {
+  --base: 16;
+  --return: calc(var(--rem) * var(--base) * 1px);
+}
+@function --px-to-percent(--px, --container-width: 1000) {
+  --return: calc(var(--px) / var(--container-width) * 100%);
+}
+
+
+@function --percent-to-px(--percent, --container-width: 1000) {
+  --return: calc(var(--percent) / 100 * var(--container-width) * 1px);
+}
+
+
+@function --spacing(--size) {
+  --base-unit: 0.5rem;
+  --return: calc(var(--size) * var(--base-unit));
+}
+
+
+@function --px-to-em(--px, --parent-size: 16) {
+  --return: calc(var(--px) / var(--parent-size) * 1em);
+}
+
+
+@function --em-to-px(--em, --parent-size: 16) {
+  --return: calc(var(--em) * var(--parent-size) * 1px);
+}
+
+
+@function --clamp(--min, --preferred, --max) {
+  --return: clamp(var(--min), var(--preferred),var(--max));
+}
+
+
+@function --hex-to-rgba(--hex, --alpha: 1) {
+  --return: color-mix(in srgb, var(--hex),transparent calc((1 - var(--alpha)) * 100%));
+}
+
+@function --aspect-ratio(--width, --height) {
+  --return: calc(var(--height) / var(--width) * 100%);
+}
+
+@function --rem-with-base(--px, --base) {
+  --return: calc(var(--px) / var(--base) * 1rem);
+}
+
+@function --vw-custom(--px, --viewport) {
+  --return: calc(var(--px) / var(--viewport) * 100vw);
+}
+@function --vh-custom(--px, --viewport) {
+  --return: calc(var(--px) / var(--viewport) * 100vh);
+}
+
+/
+/* =========================================
+   END OF FUN.CSS
+   ========================================= */
