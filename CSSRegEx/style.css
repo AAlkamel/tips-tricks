@@ -1,0 +1,106 @@
+:root {
+  --bg:#f5f5f5;
+	--primary-color: #2d6085;
+	--secondary-color: #e6ab2c;
+  --warn-color: #f14612;
+  --success-color: #13b456;
+	--font-size: 16px;
+	--line-height: 1.5;
+	--font-family: 'Open Sans', 'sans-serif';
+}
+
+/* reset some default styles */
+html {
+	scroll-behavior: smooth;
+	scroll-snap-type: y mandatory;
+}
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body {
+	font-family: var(--font-family);
+	font-size: var(--font-size);
+	line-height: var(--line-height);
+	background-color: #f5f5f5;
+	color: #474349;
+}
+
+code {
+	background-color: #e0e0e0;
+	padding: 1px 4px;
+	border-radius: 4px;
+	font-family: 'Courier New', Courier, monospace;
+	line-height: 1rem;
+	font-size: 0.8rem;
+
+}
+p {
+	font-size: 0.9rem;
+  line-height: 1.2rem;
+}
+h1, h2 {
+  color: var(--primary-color);
+ font-size: 20px;
+}
+h1{
+  font-size: 24px;
+}
+.section {
+	scroll-snap-align: start;
+	scroll-margin-top: 100px;
+	min-height: 100vh;
+	max-width: 800px;
+	margin: 50px auto;
+}
+/* Utilities */
+[class^="btn"] {
+  display: inline-block;
+  padding: 8px 16px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  text-decoration: none;
+  color: #474349;
+  background-color: var(--bg);
+  margin-inline-end: .5rem;
+  margin-bottom: .5rem  ;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: all .2s ease-in-out;
+}
+[class^="btn"]:hover {
+  background-color: oklab(from var(--bg) calc(l - 0.1) a b / 1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+[class^="btn"][class*="-outline"] {
+  border: 1px solid var(--bg);
+  background-color: transparent;
+   color:var(--bg) !important;
+}
+[class^="btn"][class*="outline"]:hover {
+  background-color:  oklab(from var(--bg) l a b / 0.1);
+  color:var(--bg);
+}
+
+[class*="disabled"] {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+[class*="rounded"] {
+  border-radius: 36px;
+}
+[class^="btn"][class*="primary"] {
+  --bg: var(--primary-color);
+  color: #f5f5f5;
+}
+[class^="btn"][class*="secondary"] {
+  --bg: var(--secondary-color);
+  color: #f5f5f5;
+}
+[class^="btn"][class*="warning"] {
+  --bg: var(--warn-color);
+color: #f5f5f5;}
+[class^="btn"][class*="success"] {
+  --bg: var(--success-color);
+color: #f5f5f5;}

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Regex</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="section">
+    <h1>CSS Regular Expressions</h1>
+    <p>Regular expressions (regex) are a powerful tool for matching patterns in strings. In CSS, regex can be used in
+      various contexts, such as attribute selectors and content generation.</p>
+
+    <h2>Attribute Selectors with Regex</h2>
+    <p>CSS allows you to use regex-like syntax in attribute selectors to match elements based on their attributes. For
+      example:</p>
+    <code>
+        /* Select elements with a class that starts with "btn-" , e.g. btn-primary or btn-secondary btn-primary-outline etc. */
+        <br>
+        [class^="btn"] {
+          /* styles */
+        }
+        [class*="-primary"] {
+          /* styles */
+        }
+        [class$="-outline"] {
+          /* styles */
+        } /* etc */
+
+    </code>
+    <p>In this example, the regex [^a-zA-Z0-9] matches any character that is not a letter, number, or underscore,
+      the regex [*a-zA-Z0-9] matches any character that is a letter, number, or underscore, 
+      and the regex [$a-zA-Z0-9] matches any character that ends with a letter, number, or underscore. 
+      These selectors allow you to target elements based on specific patterns in their class names or other attributes.
+
+    </p>
+      <br>
+
+      scroll down
+      
+  </div>
+  <div class="section">
+    <button class="btn">button</button>
+    <button class="btn-rounded">button</button>
+    <button class="btn-disabled">button</button>
+    <br>
+    <button class="btn-primary">button</button>
+    <button class="btn-primary-outline">button</button>
+    <button class="btn-primary-rounded">button</button>
+    <button class="btn-primary-outline-rounded">button</button>
+    <button class="btn-primary-disabled">button</button>
+    <br>
+    <button class="btn-secondary">button</button>
+    <button class="btn-secondary-outline">button</button>
+    <button class="btn-secondary-rounded">button</button>
+    <button class="btn-secondary-outline-rounded">button</button>
+    <button class="btn-secondary-disabled">button</button>
+    <br>
+    <button class="btn-warning">button</button>
+    <button class="btn-warning-outline">button</button>
+    <button class="btn-warning-rounded">button</button>
+    <button class="btn-warning-outline-rounded">button</button>
+    <button class="btn-warning-disabled">button</button>
+    <br>
+    <button class="btn-success">button</button>
+    <button class="btn-success-outline">button</button>
+    <button class="btn-success-rounded">button</button>
+    <button class="btn-success-outline-rounded">button</button>
+    <button class="btn-success-disabled">button</button>
+    
+  </div>
+</body>
+
+</html>
